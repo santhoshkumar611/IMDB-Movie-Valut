@@ -4,7 +4,7 @@ import Movie from './Components/Movie';
 import NavigationBar from './Components/NavigationBar';
 import Watchlist from './Components/Watchlist';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
   const [watchlist, setWatchList] = useState([]);
@@ -23,6 +23,14 @@ function App() {
     setWatchList(filterWatchList)
     console.log(filterWatchList)
   }
+
+  useEffect(()=>{
+    let moviesFromLocalStroage = localStorage.getItem('moviesApp')
+    if(!moviesFromLocalStroage){
+      return
+    }
+    setWatchList(JSON.parse(moviesFromLocalStroage))
+  },[])
 
   return (
     <>
@@ -49,6 +57,7 @@ function App() {
                 watchlist={watchlist}
                 handleAddToWatchList={handleAddToWatchList}
                 handleRemoveFromWatchList={handleRemoveFromWatchList}
+                setWatchList={setWatchList}
               />
             }
           />
