@@ -11,6 +11,7 @@ function App() {
 
   const handleAddToWatchList = (movieObj) => {
     const newWatchList = [...watchlist, movieObj];
+    localStorage.setItem('moviesApp' ,JSON.stringify(newWatchList))
     setWatchList(newWatchList);
     console.log(newWatchList);
   }

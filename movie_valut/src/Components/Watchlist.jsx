@@ -29,11 +29,11 @@ function Watchlist({watchlist}) {
           {watchlist.map((movieObj)=>{
             return <tr className='border-b-2'>
             <td className='flex items-center px-6 py-4'>
-              <img className='h-[6rem] w-[10rem]' src={'https://image.tmdb.org/t/p/w500${movieObj.poster_path}'} alt="" />
-            <div className='mx-10'>Black Panther</div>
+              <img className='h-[6rem] w-[10rem]' src={`https://image.tmdb.org/t/p/w500${movieObj.backdrop_path}`} alt="" />
+            <div className='mx-10'>{movieObj.title}</div>
             </td>
-              <td>8.5</td>
-              <td>9</td>
+              <td>{movieObj.vote_average}</td>
+              <td>{movieObj.popularity}</td>
               <td>Action</td>
               <td className='text-red-600'>Delete</td>
             </tr>
