@@ -6,23 +6,23 @@ import Watchlist from './Components/Watchlist';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-function App() {
+function App(name, poster_path) {
   const [watchlist, setWatchList] = useState([]);
 
-  const handleAddToWatchList = (movieObj) => {
-    const newWatchList = [...watchlist, movieObj];
+  let handleAddToWatchList = (movieObj) => {
+    let newWatchList = [...watchlist, movieObj];
     localStorage.setItem('moviesApp' ,JSON.stringify(newWatchList))
     setWatchList(newWatchList);
     console.log(newWatchList);
   }
 
-  const handleRemoveFromWatchList = (movieObj) => {
-    const filterWatchList = watchlist.filter((movie) =>{
-      return movie.id != movieObj.id
-  })
-    setWatchList(filterWatchList)
-    console.log(filterWatchList)
+  let handleRemoveFromWatchList = (movieObj) => {
+    let filterWatchList = watchlist.filter((movie) => movie.id !== movieObj.id);
+    setWatchList(filterWatchList);
+    localStorage.setItem('moviesApp', JSON.stringify(filterWatchList));
+    console.log(filterWatchList);
   }
+  
 
   useEffect(()=>{
     let moviesFromLocalStroage = localStorage.getItem('moviesApp')
@@ -42,7 +42,7 @@ function App() {
             path='/'
             element={
               <>
-                <Banner />
+              <Banner/>
                 <Movie
                   watchlist={watchlist}
                   handleAddToWatchList={handleAddToWatchList}

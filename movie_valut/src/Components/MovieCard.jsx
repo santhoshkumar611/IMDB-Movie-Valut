@@ -22,9 +22,9 @@ function MovieCard({ movieObj, poster_path, name, handleAddToWatchList, handleRe
         onClick={()=>(handleRemoveFromWatchList(movieObj))}  
         className='m-4 flex justify-center h-8 w-8 items-center rounded-lg bg-slate-200 text-rose-600'
       >
-        {/* <i className="fa-sharp fa-solid fa-xmark"></i> */}
+        <i className="fa-sharp fa-solid fa-xmark"></i>
         
-        &#10060;
+        {/* &#10060; */}
       </div>
     ) :
     (
@@ -32,8 +32,8 @@ function MovieCard({ movieObj, poster_path, name, handleAddToWatchList, handleRe
         onClick={() => (handleAddToWatchList(movieObj))}  
         className='m-4 flex justify-center h-8 w-8 items-center rounded-lg bg-slate-200 text-black'
       >
-        {/* <i className="fa-sharp fa-solid fa-plus"></i> */}
-        &#10133;
+        <i className="fa-sharp fa-solid fa-plus"></i>
+        {/* &#10133; */}
       </div>
     )
 }
