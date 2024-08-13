@@ -20,7 +20,7 @@ function MovieCard({ movieObj, poster_path, name, handleAddToWatchList, handleRe
     (
       <div 
         onClick={()=>(handleRemoveFromWatchList(movieObj))}  
-        className='m-4 flex justify-center h-8 w-8 items-center rounded-lg bg-slate-200 text-rose-600'
+        className='m-4 flex justify-center h-8 w-8 items-center rounded-lg bg-slate-200 text-rose-600 '
       >
         <i className="fa-sharp fa-solid fa-xmark"></i>
         

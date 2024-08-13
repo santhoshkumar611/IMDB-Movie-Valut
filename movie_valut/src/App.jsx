@@ -6,6 +6,7 @@ import Watchlist from './Components/Watchlist';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
+
 function App(name, poster_path) {
   const [watchlist, setWatchList] = useState([]);
 

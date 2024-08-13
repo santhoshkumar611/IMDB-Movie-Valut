@@ -41,8 +41,8 @@ function Watchlist({watchlist, setWatchList , handleRemoveFromWatchList}) {
       <div className=' flex justify-center flex-wrap m-4 '>
         {genreList.map((genre)=>{
        return <div onClick={()=>handleFilter(genre)}className={currGenre == genre
-        ? "bg-blue-400 items-center flex justify-center h-[3rem] w-[9rem] rounded-xl text-white font-bold mx-4 "
-        : "bg-gray-400/50 items-center flex justify-center h-[3rem] w-[9rem] rounded-xl text-white font-bold  mx-4"}>
+        ? "bg-red-700 items-center flex justify-center h-[3rem] w-[9rem] rounded-xl text-white font-bold mx-4 "
+        : "bg-gray-700/50 items-center flex justify-center h-[3rem] w-[9rem] rounded-xl text-white font-bold  mx-4"}>
           {genre}
         </div>
 
@@ -83,14 +83,14 @@ function Watchlist({watchlist, setWatchList , handleRemoveFromWatchList}) {
             return <tr className='border-b-2'>
             <td className='flex items-center px-6 py-4'>
               <img className='h-[6rem] w-[10rem]' src={`https://image.tmdb.org/t/p/w500${movieObj.backdrop_path}`} alt="" />
-            <div className='mx-10'>{movieObj.title}</div>
+            <div className='mx-10 text-white'>{movieObj.title}</div>
             </td>
-              <td>{movieObj.vote_average}</td>
+              <td className='text-yellow-500'>{movieObj.vote_average}</td>
               <td>{movieObj.popularity}</td>
-              <td>{genreids[movieObj.genre_ids[0]]}</td>
+              <td >{genreids[movieObj.genre_ids[0]]}</td>
 
 
-              <td onClick={()=>handleRemoveFromWatchList(movieObj)} className='text-red-600'>Delete</td>
+              <td onClick={()=>handleRemoveFromWatchList(movieObj)} className='text-red-500'>Delete</td>
             </tr>
           })}
             
